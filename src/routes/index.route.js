@@ -8,6 +8,9 @@
   Copyright IBM Corporation 2020
 */
 
+const Sentry = require("@sentry/node");
+
+
 const express = require('express');
 const cars = require('./cars.route');
 const accounts = require('./accounts.route');
@@ -21,7 +24,8 @@ router.use('/', swagger);
 
 router.get('/', (req, res) => res.send('Sample Node API Version1'));
 router.get('/error', (req, res) => {
-    throw new Error("Error Thrown on purpose to send it to Bugsink");
+  res.send('Error');
+  Sentry.captureException(new Error("Error Thrown on purpose to send it to Bugsink"));
 });
 
 router.get('/health', (req, res) => {
