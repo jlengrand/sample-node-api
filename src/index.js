@@ -8,6 +8,20 @@
   Copyright IBM Corporation 2020
 */
 
+const Sentry = require("@sentry/node");
+
+Sentry.init({
+  dsn: "http://e1b49746a229427c9cbb8840bfbde82b@bugsink-rk08sow8w0gw0gk0w44kk08s.138.201.122.228.sslip.io/1",
+
+  // Alternatively, use `process.env.npm_package_version` for a dynamic release version
+  // if your build tool supports it.
+  release: "sample-node-api@1.0.0",
+
+  integrations: [],
+  tracesSampleRate: 0,
+});
+
+
 const express = require('express');
 const http = require('http');
 const https = require('https');

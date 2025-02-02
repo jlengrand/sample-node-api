@@ -13,6 +13,8 @@
   "author": "",
   "license": "EPL-2.0",
   "dependencies": {
+    "@sentry/browser": "^8.53.0",
+    "@sentry/node": "^8.53.0",
     "cors": "2.8.5",
     "express": "4.17.1",
     "swagger-ui-express": "4.2.0",
